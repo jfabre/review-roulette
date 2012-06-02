@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Comment:
+  = @review.comment
+%p
+  %b Player:
+  = @review.player_id
+%p
+  %b Completed:
+  = @review.completed
+
+= link_to 'Edit', edit_review_path(@review)
+\|
+= link_to 'Back', reviews_path

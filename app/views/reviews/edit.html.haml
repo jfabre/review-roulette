@@ -1,0 +1,11 @@
+%h1 Edit a review
+= form_for @review do |f|
+  %h4 Comment
+  %p= @review.comment
+  %br/
+  %br/
+  .field
+    = f.check_box :completed
+    = f.label :completed, :style => 'display:inline'
+  .actions
+    = f.submit 'Close', :class => 'btn btn-success btn-large', :title => 'Close the review'

@@ -1,0 +1,15 @@
+%h1 Most recent winners
+
+%table.table.table-striped
+  %tr
+    %th Winner
+    %th Date
+    %th Completed
+    %th
+  - @reviews.each do |r|
+    %tr
+      %td= r.player.name
+      %td= r.created_at
+      %td= check_box_tag 'completed','completed', r.completed
+      %td= link_to 'Edit', edit_review_path(r), :class => 'btn btn-primary'
+%br

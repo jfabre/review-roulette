@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  comment: MyString
+  player_id: 
+  completed: false
+
+two:
+  comment: MyString
+  player_id: 
+  completed: false
