@@ -4,10 +4,8 @@ class ReviewMailer < ActionMailer::Base
 
   def review(review, user)
     @user = user
-    @host = "host.com" 
     @review = review
 
-    #mail(:to => "#{user.name} <#{user.email}>", :subject => "You won a review!")
-    mail(:to => "#{user.name} <jimboxx7@hotmail.com>", :subject => "You won a review!")
+    mail(:to => "#{user.name} <#{user.email}>", :subject => "You won a review!")
   end
 end
