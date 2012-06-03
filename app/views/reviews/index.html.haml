@@ -1,15 +1,17 @@
-%h1 Most recent winners
+%h1 Our winners
 
 %table.table.table-striped
   %tr
     %th Winner
     %th Date
+    %th Comment
     %th Completed
     %th
   - @reviews.each do |r|
     %tr
       %td= r.player.name
-      %td= r.created_at
+      %td= r.created_at.in_time_zone(-5)
+      %td= r.comment
       %td= check_box_tag 'completed','completed', r.completed
       %td= link_to 'Edit', edit_review_path(r), :class => 'btn btn-primary'
-%br
+%br/

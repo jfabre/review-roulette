@@ -13,7 +13,6 @@
     %link(href="images/apple-touch-icon.png" rel="apple-touch-icon")
     %link(href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72")
     %link(href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114")
-
   %body
     .navbar.navbar-fixed-top
       .navbar-inner
@@ -27,7 +26,6 @@
             %ul.nav
               %li= link_to "Winners", reviews_path
               %li= link_to "About", about_path
-
     .container-fluid
       .row-fluid
         .span3
@@ -37,10 +35,13 @@
               - @winners.each do |r|
                 %li= link_to "#{r.player.name} #{r.created_at.strftime("%Y-%m-%d")}", edit_review_path(r), title: r.comment
         .span9
+          - {:notice => 'alert-success', :error => 'alert-error', :alert => 'alert'}.each do |k, v|
+            - unless flash[k].blank?
+              .alert(class=v)
+                = flash[k]
           = yield
-    
       %footer
-        %p
+        %p &copy have fun corporation
     /
       Javascripts
       \==================================================
