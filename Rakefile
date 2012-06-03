@@ -10,4 +10,5 @@ ReviewRoulette::Application.load_tasks
 desc "cleanup"
 task :cleanup => :environment do
   Review.all.each { |r| r.destroy }
+  Player.all.each{|p| p.destroy }
 end
