@@ -1,7 +1,6 @@
 class ReviewMailer < ActionMailer::Base
   default from: "system@review-roulette.org"
 
-
   def review(review, user)
     @user = user
     @review = review
