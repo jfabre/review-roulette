@@ -15,4 +15,9 @@ players = [
   { name: 'Pierre Derval', email: 'pierre.derval@ziliko.com' } 
 ].select{|p| Player.find_by_email(p[:email]).nil? }
 
+players = [
+  { name: 'Jeremy Fabre',  email: 'jimboxx7@hotmail.com' }, 
+].select{|p| Player.find_by_email(p[:email]).nil? }
+
+
 Player.create(players)
