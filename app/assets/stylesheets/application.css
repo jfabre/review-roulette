@@ -26,27 +26,6 @@ div.row{
   margin-top:40px;
 }
 
-button.go {
-  width: 100px;
-  font-size: 20px;
-  padding: 15px 0 15px 0;
-  margin-top:30px;
-}
-ul.slot li{
-  height:100px;
-  width:100px;
-}
-.jSlots-wrapper {
-    overflow: hidden; /* to hide the magic */
-    height: 100px; /* whatever the height of your list items are */
-    display: inline-block; /* to size width correctly, can use float too, or width*/
-    border: 1px solid #999;
-}
-
-#winnername{
-  color: green;
-}
-
 ul.nav.nav-list a:hover{
   color:black;
   font-weight: bold;

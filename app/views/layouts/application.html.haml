@@ -46,3 +46,4 @@
       \==================================================
     / Placed at the end of the document so the pages load faster
     = javascript_include_tag "application"
+    = content_for?(:custom_js) ? yield(:custom_js) : ""

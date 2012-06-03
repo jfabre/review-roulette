@@ -1,0 +1,17 @@
+%html(lang="en")
+  %head
+  %body
+    %h1 You won a review!
+    %br/
+    %br/
+    %p 
+      Dear #{@user.name}, 
+      %br/
+      %br/
+      Whenever you can, please take the time to review what your buddy coded.
+      %br/
+    %h4 Comment
+    %p #{@review.comment}
+    %br/
+    %br/
+    %p You can close the view when done at #{link_to(edit_review_url(@review), edit_review_url(@review))}

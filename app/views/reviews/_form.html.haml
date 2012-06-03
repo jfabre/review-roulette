@@ -1,21 +1,15 @@
 = form_for @review do |f|
-  -if @review.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@review.errors.count, "error")} prohibited this review from being saved:"
-      %ul
-        - @review.errors.full_messages.each do |msg|
-          %li= msg
   .row
     .span2
     .span6
       .row
-        .span2
-          %ul.slot.unstyled
-            - @players.each_with_index do |p, i|
-              %li
-                = image_tag avatar_url(p, 100), title: p.name, alt: p.name
-        .span2
-        .span2
+        .span3
+          .slot-machine
+            %ul.slot.unstyled
+              - @players.each_with_index do |p, i|
+                %li
+                  = image_tag avatar_url(p, 100), title: p.name, alt: p.name
+        .span9
           .actions
             = f.hidden_field :player_id
             = button_tag 'Pick!', :class => 'go btn btn-primary', :type => "button", 'data-loading-text' => "picking..."
@@ -36,6 +30,7 @@
     .span1
     .span11
       .actions
-        = f.submit 'Send', :class => 'btn btn-success btn-large disabled', :disabled => 'disabled', :title => 'Send the review'
-
-  
+        -if @review.errors.any?
+          = f.submit 'Send', :class => 'btn btn-success btn-large', :title => 'Send the review'
+        -else
+          = f.submit 'Send', :class => 'btn btn-success btn-large disabled', :disabled => 'disabled', :title => 'Send the review'

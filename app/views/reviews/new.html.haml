@@ -6,15 +6,22 @@
     - @players.each do |p|
       %li= image_tag avatar_url(p), title: p.name, alt: p.name  
   = render 'form'
-:javascript
-  setWinner = function(winner){
-    winner -= 1;
-    var result = $.getJSON('#{players_path}.json', function(data){
-      winner = data[winner];
-  
-      $('#winnername').text(winner.name);
-      $('#review_player_id').attr('value', winner.id);
+
+- content_for :custom_js do
+  :javascript
+    $(document).ready(function(){
+      var nameSlot = $('#winnername').text('#{@name}');
+    
+      setWinner = function(winner){
+        winner -= 1;
+        var result = $.getJSON('#{players_path}.json', function(data){
+          winner = data[winner];
+      
+          nameSlot.text(winner.name);
+          $('#review_player_id').attr('value', winner.id);
+        });
+      };
     });
-  };
+  
   
   

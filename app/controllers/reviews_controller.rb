@@ -1,6 +1,4 @@
 class ReviewsController < ApplicationController
-
-
   # GET /reviews
   # GET /reviews.json
   def index
@@ -16,23 +14,25 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     @players = Player.all
+    @name = ''
 
     respond_to do |format|
       format.html # new.html.erb
     end
   end
 
-  
-
   # POST /reviews
   # POST /reviews.json
   def create
     @review = Review.new(params[:review])
-  
+
     respond_to do |format|
       if @review.save
+        ReviewMailer.review(@review, @review.player).deliver
         format.html { redirect_to new_review_path, notice: 'Review was successfully created.' }
       else
+        @name = @review.player.name
+        @players = Player.all
         format.html { render action: "new" }
       end
     end
