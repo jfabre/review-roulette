@@ -15,8 +15,11 @@ if defined?(DevelopmentMailInterceptor)
       :password       => ENV['SENDGRID_PASSWORD'],
       :domain         => 'heroku.com'
     }
+
     ActionMailer::Base.default_url_options[:host] = "review-roulette.herokuapp.com"
     ActionMailer::Base.delivery_method = :smtp
   end
   ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor) 
+else
+  puts "DevelopmentMailInterceptor is not defined!!!!!"
 end
