@@ -1,0 +1,16 @@
+= form_for @player do |f|
+  .row
+    .span2
+    .span10
+      .field
+        = f.label :name
+        = f.text_field :name
+      .field
+        = f.label :email
+        = f.text_field :email
+  .row
+    .span2
+    .span10
+      .actions
+        = f.submit 'Save', :class => 'btn btn-primary btn-large'
+        = link_to 'Back', players_path, :class => 'btn btn-info btn-large'

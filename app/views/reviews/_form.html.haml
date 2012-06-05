@@ -12,7 +12,7 @@
         .span9
           .actions
             = f.hidden_field :player_id
-            = button_tag 'Pick!', :class => 'go btn btn-primary', :type => "button", 'data-loading-text' => "picking..."
+            = button_tag 'Pick!', :class => 'go btn btn-success', :type => "button", 'data-loading-text' => "picking..."
     .span4
   .row
     .span1
@@ -31,6 +31,6 @@
     .span11
       .actions
         -if @review.errors.any?
-          = f.submit 'Send', :class => 'btn btn-success btn-large', :title => 'Send the review'
+          = f.submit 'Send', :class => 'btn btn-primary btn-large', :title => 'Send the review'
         -else
-          = f.submit 'Send', :class => 'btn btn-success btn-large disabled', :disabled => 'disabled', :title => 'Send the review'
+          = f.submit 'Send', :class => 'btn btn-primary btn-large disabled', :disabled => 'disabled', :title => 'Send the review'

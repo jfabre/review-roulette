@@ -13,5 +13,5 @@
       %td= r.created_at.in_time_zone(-5)
       %td= r.comment
       %td= check_box_tag 'completed','completed', r.completed
-      %td= link_to 'Edit', edit_review_path(r), :class => 'btn btn-primary'
+      %td= link_to 'Edit', edit_review_path(r), :class => 'btn btn-warning'
 %br/

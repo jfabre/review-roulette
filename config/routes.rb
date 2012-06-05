@@ -1,7 +1,7 @@
 ReviewRoulette::Application.routes.draw do
-  get "players", :as => :players, :controller => :players, :action => :index
   get "home/about", :as => :about
 
+  resources :players
   resources :reviews
   root :to => 'reviews#new'
   

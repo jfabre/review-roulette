@@ -1,0 +1,15 @@
+%h1 The players
+%table.table.table-striped
+  %tr
+    %th Name
+    %th Email
+    %th
+    %th
+  - @players.each do |p|
+    %tr 
+      %td= p.name
+      %td= p.email
+      %td= link_to 'Edit', edit_player_path(p), :class => 'btn btn-warning'
+      %td= link_to 'Destroy', p, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger'
+%br
+= link_to 'New Player', new_player_path, :class => 'btn btn-success'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120602024821) do
+ActiveRecord::Schema.define(:version => 20120605003510) do
 
   create_table "players", :force => true do |t|
     t.string   "name",       :null => false
@@ -21,11 +21,12 @@ ActiveRecord::Schema.define(:version => 20120602024821) do
   end
 
   create_table "reviews", :force => true do |t|
-    t.string   "comment",    :default => "",    :null => false
-    t.integer  "player_id",                     :null => false
-    t.boolean  "completed",  :default => false, :null => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.string   "comment",     :default => "",    :null => false
+    t.integer  "player_id",                      :null => false
+    t.boolean  "completed",   :default => false, :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.string   "player_name"
   end
 
 end
