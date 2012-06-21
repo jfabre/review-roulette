@@ -15,7 +15,7 @@ elsif Rails.env.production?
     :domain         => 'heroku.com'
   }
 
-  ActionMailer::Base.default_url_options[:host] = "review-roulette.herokuapp.com"
+  ActionMailer::Base.default_url_options[:host] = "review-roulette.com"
   ActionMailer::Base.delivery_method = :smtp
 end
   
